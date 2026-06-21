@@ -1063,6 +1063,13 @@
       });
     });
 
+    // NEW: Close mobile menu on scroll
+    window.addEventListener('scroll', () => {
+      if (mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
