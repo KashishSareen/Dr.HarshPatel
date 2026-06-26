@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Orthopaedics | Dr. Harsh Patel — Orthopedic Specialist</title>
+  <meta name="description" content="OPD consultations for back pain, neck pain, shoulder problems, bone and joint deformities, and all musculoskeletal conditions." />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1F3A',
+            'navy-light': '#162B4D',
+            teal: '#0E7C7B',
+            'teal-light': '#14A69E',
+            'teal-dark': '#0a5c5b',
+            gold: '#C9973A',
+            'gold-light': '#E5B558',
+            cream: '#F8F4EE',
+            'gray-soft': '#E8EDF3',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; max-width: 100vw; }
+    h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
+
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background: #C9973A;
+      transition: width .3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(14,124,123,0.5); }
+      70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(14,124,123,0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(14,124,123,0); }
+    }
+    .pulse { animation: pulse-ring 2.5s infinite; }
+
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      animation: pulse-ring 2.5s infinite;
+    }
+
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    .step-card { transition: transform .35s ease, box-shadow .35s ease; }
+    .step-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(14,124,123,0.16); }
+
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-answer { display: none; }
+    .faq-answer.open { display: block; }
+
+    .benefit-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; border: 2px solid transparent; }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14,124,123,0.15); border-color: #14A69E; }
+
+    section, header, footer { max-width: 100vw; overflow-x: hidden; }
+    img { max-width: 100%; }
+
+    @media (max-width: 320px) {
+      .text-5xl { font-size: 1.9rem !important; }
+      .text-4xl { font-size: 1.6rem !important; }
+      .text-3xl { font-size: 1.35rem !important; }
+      .px-5 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+    }
+
+    .hero-general {
+      background: linear-gradient(135deg, #0B1F3A 0%, #162B4D 55%, #0E7C7B18 100%);
+    }
+
+    .timeline-dot {
+      width: 14px; height: 14px;
+      background: #0E7C7B;
+      border: 3px solid #F8F4EE;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .img-glow { box-shadow: 0 0 60px rgba(14,124,123,0.25); }
+  </style>
+</head>
+<body class="bg-white text-navy font-body">
+
+  <!-- ======== NAVBAR ======== -->
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-navy/95 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 min-w-0">
+        <img src="/images/dr_logo.png" alt="Dr. Harsh Patel" class="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
+        <div class="flex flex-col leading-tight min-w-0">
+          <span class="text-white font-display font-bold text-base sm:text-lg tracking-wide truncate">Dr. Harsh Patel</span>
+          <span class="text-teal-light text-xs font-medium tracking-widest uppercase truncate">Orthopedic Specialist</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="index.html" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">Home</a>
+        <a href="index.html#about" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">About</a>
+        <a href="index.html#services" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">Services</a>
+        <a href="index.html#credentials" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">Credentials</a>
+        <a href="index.html#locations" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">Locations</a>
+        <a href="index.html#contact" class="nav-link text-gray-300 hover:text-gold text-sm font-medium transition-colors">Contact</a>
+      </nav>
+
+      <button id="hamburger" class="md:hidden text-white focus:outline-none p-1" aria-label="Toggle menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="bg-navy-light border-t border-white/10">
+      <div class="px-4 py-4 flex flex-col gap-4">
+        <a href="index.html" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">Home</a>
+        <a href="index.html#about" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">About</a>
+        <a href="index.html#services" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">Services</a>
+        <a href="index.html#credentials" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">Credentials</a>
+        <a href="index.html#locations" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">Locations</a>
+        <a href="index.html#contact" class="text-gray-300 hover:text-gold text-sm font-medium mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero-general min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <div class="absolute top-16 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-teal/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 py-14 sm:py-20 w-full">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <!-- Left -->
+        <div data-aos="fade-right" data-aos-duration="900">
+          <span class="inline-flex items-center gap-2 bg-teal/20 text-teal-light text-xs font-semibold px-4 py-2 rounded-full mb-5">
+            <span class="w-2 h-2 bg-teal rounded-full"></span>
+            Comprehensive Orthopedic Care
+          </span>
+
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-5">
+            General <br>
+            <span class="text-teal-light">Orthopaedics</span>
+          </h1>
+
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+            OPD consultations for back pain, neck pain, shoulder problems, bone and joint deformities, and all musculoskeletal conditions.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="index.html#contact" class="bg-teal hover:bg-teal-light text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-xl shadow-teal/20 text-sm sm:text-base">
+              Book Consultation
+            </a>
+            <a href="https://wa.me/918898593838?text=Hello%20Doctor,%20I%20want%20to%20enquire%20about%20General%20Orthopaedics." target="_blank" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base">
+              WhatsApp Now
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4 text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold text-gold">10K+</div>
+              <div class="text-gray-400 text-xs mt-1">OPD Consultations</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4 text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold text-gold">10+</div>
+              <div class="text-gray-400 text-xs mt-1">Years Expertise</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4 text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold text-gold">98%</div>
+              <div class="text-gray-400 text-xs mt-1">Patient Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — Image -->
+        <div class="flex justify-center" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal/30 to-gold/20 blur-xl"></div>
+            <img src="/images/general_orthopaedics.jpg" alt="General Orthopaedics — Dr. Harsh Patel" class="relative z-10 rounded-3xl w-full shadow-2xl object-cover border border-teal/30 img-glow" style="aspect-ratio:4/5; object-position:center;" />
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 30 C360 60 1080 0 1440 30 L1440 60 L0 60 Z" fill="#F8F4EE"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======== WHAT IS GENERAL ORTHOPAEDICS ======== -->
+  <section class="bg-cream py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <!-- Image -->
+        <div class="flex justify-center order-2 md:order-1" data-aos="fade-right" data-aos-duration="900">
+          <div class="relative w-full max-w-sm sm:max-w-md">
+            <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-teal/20 to-gold/20 blur-lg"></div>
+            <img src="/images/orthopaedics_consultation.jpg" alt="General Orthopaedics Consultation" class="relative z-10 rounded-3xl w-full shadow-2xl object-cover border-4 border-white" style="aspect-ratio:4/3; object-position:center;" />
+           
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 md:order-2" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+          <span class="text-teal text-xs uppercase tracking-widest font-semibold">Understanding General Orthopaedics</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy mt-2 mb-5">What is General Orthopaedics?</h2>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
+            General orthopaedics encompasses the diagnosis, treatment, and management of a wide range of musculoskeletal conditions. Dr. Patel provides comprehensive OPD consultations for all bone, joint, and muscle problems.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-5 text-sm sm:text-base">
+            From back pain and neck pain to shoulder problems, arthritis, and bone deformities, Dr. Patel offers expert evaluation and personalized treatment plans for every patient.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-teal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-gray-600 text-sm">Back pain, neck pain, and spinal conditions</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-teal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-gray-600 text-sm">Shoulder, knee, hip, and ankle problems</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-teal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-gray-600 text-sm">Bone and joint deformities</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-teal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-gray-600 text-sm">Arthritis, osteoporosis, and joint pain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== BENEFITS ======== -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5">
+      <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-teal text-xs uppercase tracking-widest font-semibold">Why Choose Dr. Patel</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-navy mt-2">Comprehensive Orthopedic Care</h2>
+        <div class="w-16 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+        <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-sm sm:text-base">Expert diagnosis and treatment for all musculoskeletal conditions, from common complaints to complex problems.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">🩺</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Expert Diagnosis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Accurate diagnosis of musculoskeletal conditions using advanced clinical examination and imaging techniques.</p>
+        </div>
+
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">💊</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Personalized Treatment</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Individualized treatment plans tailored to your specific condition, lifestyle, and recovery goals.</p>
+        </div>
+
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">🏥</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Comprehensive Care</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Management of all orthopedic conditions from back pain and arthritis to sports injuries and fractures.</p>
+        </div>
+
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">🦴</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Bone & Joint Health</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Preventive care and management of osteoporosis, arthritis, and other degenerative bone conditions.</p>
+        </div>
+
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">⚡</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Non-Surgical Options</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When possible, non-surgical treatments including medications, injections, and physiotherapy are prioritized.</p>
+        </div>
+
+        <div class="benefit-card bg-white border border-gray-soft rounded-2xl p-5 sm:p-7 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-4 text-3xl">❤️</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-navy mb-2">Patient-Centered Approach</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Dr. Patel takes time to listen, explain your condition, and involve you in every treatment decision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== WHO CAN BENEFIT ======== -->
+  <section class="py-16 sm:py-24 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(14,124,123,0.15),transparent_60%)]"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-5 relative z-10">
+    <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+      <span class="text-teal-light text-xs uppercase tracking-widest font-semibold">
+        Who Can Benefit?
+      </span>
+
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2">
+        Orthopedic Care For Everyone
+      </h2>
+
+      <div class="w-16 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+
+      <p class="text-gray-400 max-w-3xl mx-auto mt-6 text-sm sm:text-base leading-relaxed">
+        Dr. Patel provides expert orthopedic care for patients of all ages with a wide range of musculoskeletal conditions.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      
+      <!-- Card 1 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 hover:border-teal/40 transition-all duration-300"
+        data-aos="zoom-in" data-aos-delay="0">
+        <div class="text-3xl mb-3">🔴</div>
+        <h4 class="font-display text-base font-bold text-white mb-2">
+          Back & Neck Pain
+        </h4>
+        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          Patients with chronic back pain, neck pain, sciatica, and spinal conditions requiring expert evaluation and management.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 hover:border-teal/40 transition-all duration-300"
+        data-aos="zoom-in" data-aos-delay="100">
+        <div class="text-3xl mb-3">🦵</div>
+        <h4 class="font-display text-base font-bold text-white mb-2">
+          Joint Pain & Arthritis
+        </h4>
+        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          Patients with knee, hip, shoulder, or hand arthritis, joint pain, and degenerative conditions.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 hover:border-teal/40 transition-all duration-300"
+        data-aos="zoom-in" data-aos-delay="200">
+        <div class="text-3xl mb-3">💪</div>
+        <h4 class="font-display text-base font-bold text-white mb-2">
+          Shoulder & Upper Limb
+        </h4>
+        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          Patients with shoulder pain, frozen shoulder, rotator cuff problems, and elbow or wrist conditions.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="mt-10 text-center" data-aos="fade-up">
+          <a
+            href="https://wa.me/918898593838?text=Hello%20Doctor,%20I%20want%20to%20discuss%20my%20orthopedic%20problem."
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-teal hover:bg-teal-light text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-xl shadow-teal/30 text-sm sm:text-base"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            Discuss Your Condition 
+          </a>
+        </div>
+  </div>
+</section>
+
+  <!-- ======== PROCEDURE STEPS ======== -->
+  <section class="py-16 sm:py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5">
+      <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-teal text-xs uppercase tracking-widest font-semibold">The Consultation Journey</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-navy mt-2">How Our OPD Consultations Work</h2>
+        <div class="w-16 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div class="flex justify-center" data-aos="fade-right" data-aos-duration="900">
+          <div class="relative w-full max-w-sm sm:max-w-md">
+            <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-teal/20 to-gold/20 blur-lg"></div>
+            <img src="/images/orthopedic_journey.jpg" alt="OPD Consultation Process" class="relative z-10 rounded-3xl w-full shadow-2xl object-cover border-4 border-white" style="aspect-ratio:3/4; object-position:center;" />
+          </div>
+        </div>
+
+        <div data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+          <div class="space-y-0">
+            <div class="flex gap-4 relative pb-8">
+              <div class="flex flex-col items-center">
+                <div class="timeline-dot"></div>
+                <div class="flex-1 w-0.5 bg-gradient-to-b from-teal/40 to-transparent mt-2 min-h-[40px]"></div>
+              </div>
+              <div class="step-card bg-white border border-gray-soft rounded-2xl p-4 sm:p-5 shadow-sm flex-1 mb-2">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-teal/10 text-teal text-xs font-bold px-2 py-0.5 rounded-full">Step 01</span>
+                  <h4 class="font-display font-bold text-navy text-sm sm:text-base">Comprehensive Evaluation</h4>
+                </div>
+                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Dr. Patel takes a detailed medical history and performs a thorough physical examination to understand your condition.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 relative pb-8">
+              <div class="flex flex-col items-center">
+                <div class="timeline-dot"></div>
+                <div class="flex-1 w-0.5 bg-gradient-to-b from-teal/40 to-transparent mt-2 min-h-[40px]"></div>
+              </div>
+              <div class="step-card bg-white border border-gray-soft rounded-2xl p-4 sm:p-5 shadow-sm flex-1 mb-2">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-teal/10 text-teal text-xs font-bold px-2 py-0.5 rounded-full">Step 02</span>
+                  <h4 class="font-display font-bold text-navy text-sm sm:text-base">Diagnostic Imaging</h4>
+                </div>
+                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">If needed, X-rays, MRI, or CT scans are ordered to confirm the diagnosis and assess the severity of your condition.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 relative pb-8">
+              <div class="flex flex-col items-center">
+                <div class="timeline-dot"></div>
+                <div class="flex-1 w-0.5 bg-gradient-to-b from-teal/40 to-transparent mt-2 min-h-[40px]"></div>
+              </div>
+              <div class="step-card bg-white border border-gray-soft rounded-2xl p-4 sm:p-5 shadow-sm flex-1 mb-2">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-teal/10 text-teal text-xs font-bold px-2 py-0.5 rounded-full">Step 03</span>
+                  <h4 class="font-display font-bold text-navy text-sm sm:text-base">Personalized Treatment Plan</h4>
+                </div>
+                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">A customized treatment plan is developed, which may include medications, injections, physiotherapy, or surgery if needed.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 relative">
+              <div class="flex flex-col items-center">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="step-card bg-white border border-gray-soft rounded-2xl p-4 sm:p-5 shadow-sm flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-gold/10 text-gold text-xs font-bold px-2 py-0.5 rounded-full">Step 04</span>
+                  <h4 class="font-display font-bold text-navy text-sm sm:text-base">Follow-Up & Monitoring</h4>
+                </div>
+                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Regular follow-up visits to monitor your progress and adjust treatment as needed for optimal outcomes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FAQ ======== -->
+  <section class="py-16 sm:py-24 bg-navy relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(14,124,123,0.12),transparent_60%)]"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-5 relative z-10">
+      <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-teal-light text-xs uppercase tracking-widest font-semibold">Common Questions</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">General Orthopaedics FAQs</h2>
+        <div class="w-16 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-3 sm:space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="text-white font-semibold text-sm sm:text-base">What conditions does general orthopaedics cover?</span>
+            <svg class="w-5 h-5 text-teal flex-shrink-0 faq-arrow transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6 pb-4 sm:pb-5">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">General orthopaedics covers back pain, neck pain, shoulder problems, arthritis, joint pain, bone deformities, sports injuries, and all musculoskeletal conditions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="text-white font-semibold text-sm sm:text-base">Do I need a referral to see Dr. Patel?</span>
+            <svg class="w-5 h-5 text-teal flex-shrink-0 faq-arrow transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6 pb-4 sm:pb-5">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">You can schedule a direct appointment with Dr. Patel. While a referral is not mandatory, it may be required for insurance coverage.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="text-white font-semibold text-sm sm:text-base">What happens during an OPD consultation?</span>
+            <svg class="w-5 h-5 text-teal flex-shrink-0 faq-arrow transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6 pb-4 sm:pb-5">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">During the consultation, Dr. Patel will review your medical history, examine you physically, discuss your symptoms, and recommend appropriate diagnostic tests and treatment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="text-white font-semibold text-sm sm:text-base">How long does it take to get an appointment?</span>
+            <svg class="w-5 h-5 text-teal flex-shrink-0 faq-arrow transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6 pb-4 sm:pb-5">
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Appointments can usually be scheduled within 24-48 hours. For urgent conditions, please call the clinic directly for priority scheduling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="py-16 sm:py-24 bg-cream">
+    <div class="max-w-5xl mx-auto px-4 sm:px-5 text-center" data-aos="fade-up">
+      <span class="text-teal text-xs uppercase tracking-widest font-semibold">Ready to Get Expert Orthopedic Care?</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-navy mt-3 mb-5">
+        Book Your General Orthopaedics <br>
+        <span class="text-teal">Consultation Today</span>
+      </h2>
+      <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+        Get expert evaluation and personalized treatment for your musculoskeletal condition. Dr. Harsh Patel is here to help you find relief and get back to your active life.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+        <a href="index.html#contact" class="w-full sm:w-auto bg-navy hover:bg-navy-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl text-sm sm:text-base text-center">
+          Book Appointment Online
+        </a>
+        <a href="https://wa.me/918898593838?text=Hello%20Doctor,%20I%20want%20to%20book%20a%20general%20orthopaedics%20consultation." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl shadow-teal/20 text-sm sm:text-base">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="bg-navy-light border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 pt-12 sm:pt-16 pb-6 sm:pb-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+        <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="/images/dr_logo.png" alt="Dr. Harsh Patel" class="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
+            <div>
+              <div class="text-white font-display font-bold text-base">Dr. Harsh Patel</div>
+              <div class="text-teal-light text-xs">Orthopedic Specialist</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Expert orthopedic care with over 10 years of experience and 2500+ successful surgeries.</p>
+        </div>
+
+        <div>
+          <h5 class="text-white font-display font-bold text-sm uppercase tracking-widest mb-4 pb-2">Quick Links</h5>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-gray-400 hover:text-gold text-sm transition-colors">Home</a></li>
+            <li><a href="index.html#about" class="text-gray-400 hover:text-gold text-sm transition-colors">About Dr. Patel</a></li>
+            <li><a href="index.html#services" class="text-gray-400 hover:text-gold text-sm transition-colors">Our Services</a></li>
+            <li><a href="index.html#credentials" class="text-gray-400 hover:text-gold text-sm transition-colors">Credentials</a></li>
+            <li><a href="index.html#locations" class="text-gray-400 hover:text-gold text-sm transition-colors">Hospitals & Clinics</a></li>
+            <li><a href="index.html#contact" class="text-gray-400 hover:text-gold text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+       <div>
+            <h5
+              class="text-white font-display font-bold text-sm uppercase tracking-widest mb-4 pb-2"
+            >
+              Specialities
+            </h5>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="/knee_replacement.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Knee Replacement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/robotic_knee_surgery.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Robotic Knee Surgery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/hip_replacement.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Hip Replacement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/arthroscopy.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Arthroscopy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/sports_injuries.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Sports Injuries</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/fracture_trauma.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Fracture & Trauma</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/prp_injections.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >PRP & Injections</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/physiotherapy_rehab.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >Physiotherapy & Rehab</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/general_orthopaedics.html"
+                  class="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >General Orthopaedics</a
+                >
+              </li>
+            </ul>
+          </div>
+        <div>
+          <h5 class="text-white font-display font-bold text-sm uppercase tracking-widest mb-4 pb-2">Contact</h5>
+          <div class="space-y-3">
+            <div class="flex gap-3 items-start">
+              <span class="text-teal text-base flex-shrink-0 mt-0.5">📍</span>
+              <span class="text-gray-400 text-sm">Bhayandar (East), Mira Road, Mumbai</span>
+            </div>
+            <div class="flex gap-3 items-center">
+              <span class="text-teal text-base flex-shrink-0">📱</span>
+              <a href="https://wa.me/918898593838" class="text-gray-400 hover:text-gold text-sm transition-colors">+91 88985 93838</a>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-teal text-base flex-shrink-0 mt-0.5">🕐</span>
+              <div class="text-gray-400 text-sm">
+                Mon–Sat: 10AM–1PM &amp; 5PM–8PM<br/>
+                <span class="text-teal-light">Emergency: 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-gray-400 text-xs text-center sm:text-left">© 2026 Dr. Harsh Patel. All rights reserved.</p>
+          <p class="text-gray-400 text-xs text-center">General Orthopaedics Specialist in Bhayandar · Orthopaedic Doctor Mira Road</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918898593838?text=Hello%20Doctor,%20I%20need%20a%20general%20orthopaedics%20consultation." target="_blank" class="wa-float w-14 sm:w-16 h-14 sm:h-16 bg-green-500 hover:bg-green-400 text-white rounded-full flex items-center justify-center shadow-2xl shadow-green-500/40 transition-all duration-300" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 sm:w-8 h-7 sm:h-8">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    window.addEventListener('scroll', () => {
+      if (mobileMenu.classList.contains('open')) mobileMenu.classList.remove('open');
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('shadow-2xl', window.scrollY > 50);
+    });
+
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const arrow = btn.querySelector('.faq-arrow');
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+</body>
+</html>
